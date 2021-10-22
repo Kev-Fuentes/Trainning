@@ -1,0 +1,14 @@
+### POST url Api getwey
+
+
+POST  http://localhost:3000/dev/user 
+content-type: application/x-www-form-urlencoded
+
+user=kevin fuentes
+
+
+### obtener usuarios
+
+GET   http://localhost:3000/dev/user 
+
+

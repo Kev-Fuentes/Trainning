@@ -1,0 +1,39 @@
+
+
+service: Trainning-Serverless-lamda
+
+
+frameworkVersion: '2'
+
+provider:
+  name: aws
+  runtime: nodejs12.x
+  lambdaHashingVersion: 20201221
+  region: us-east-1
+
+plugins:
+  - serverless-offline
+
+
+functions:
+  hello:
+    handler: handler.hello
+  helloUser:
+    handler: handler.helloUser
+    events:
+      - http:
+          method: GET
+          path: /user/{name}      
+  createUser:
+    handler: handler.createUser
+    events:
+      - http:
+          method: POST
+          path: /user  
+          
+  getUser: 
+    handler: handler.getUser
+    events:
+      - http:
+          method: GET
+          path: /user
